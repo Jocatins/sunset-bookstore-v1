@@ -28,7 +28,6 @@ export class LibraryService {
 		libraryIds: number[]
 	): Observable<any> {
 		// Logic to update book's library associations
-		// Replace with actual API URL and method
 		return this.http.patch<any>(`${this.apiUrl}/books/${bookId}`, {
 			libraryIds,
 		});
