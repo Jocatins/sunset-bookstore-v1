@@ -1,0 +1,16 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "The Davinci Code",
+            "author": "Dan Brown",
+            "isbn": "ISBN-01"
+        },
+        {
+            "id": 2,
+            "title": "Titans and Gypsies",
+            "author": "Nico Khamen",
+            "isbn": "ISBN-02"
+        }
+    ]
+}

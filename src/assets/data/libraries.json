@@ -1,0 +1,67 @@
+{
+    "libraries": [
+        {
+            "id": 1,
+            "name": "Central Library",
+            "location": "123 Main St, Anytown",
+            "books": [
+                {
+                    "id": 101,
+                    "title": "The Great Gatsby",
+                    "author": "F. Scott Fitzgerald",
+                    "status": "IN",
+                    "dueDate": null
+                },
+                {
+                    "id": 102,
+                    "title": "1984",
+                    "author": "George Orwell",
+                    "status": "OUT",
+                    "dueDate": "2024-06-01"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Westside Branch",
+            "location": "456 Elm St, Anytown",
+            "books": [
+                {
+                    "id": 201,
+                    "title": "To Kill a Mockingbird",
+                    "author": "Harper Lee",
+                    "status": "IN",
+                    "dueDate": null
+                },
+                {
+                    "id": 202,
+                    "title": "Brave New World",
+                    "author": "Aldous Huxley",
+                    "status": "OUT",
+                    "dueDate": "2024-06-15"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Eastside Branch",
+            "location": "789 Oak St, Anytown",
+            "books": [
+                {
+                    "id": 301,
+                    "title": "Moby-Dick",
+                    "author": "Herman Melville",
+                    "status": "IN",
+                    "dueDate": null
+                },
+                {
+                    "id": 302,
+                    "title": "Pride and Prejudice",
+                    "author": "Jane Austen",
+                    "status": "OUT",
+                    "dueDate": "2024-05-25"
+                }
+            ]
+        }
+    ]
+}

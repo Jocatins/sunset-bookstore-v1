@@ -1,0 +1,18 @@
+<h2>Add New Book</h2>
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="title">Title</label>
+        <input id="title" formControlName="title">
+    </div>
+    <div>
+        <label for="author">Author</label>
+        <input id="author" formControlName="author">
+    </div>
+    <div>
+        <label for="libraries">Assign to Libraries</label>
+        <select id="libraries" formControlName="libraryIds" multiple>
+            <option *ngFor="let library of libraries" [value]="library.id">{{ library.name }}</option>
+        </select>
+    </div>
+    <button type="submit" [disabled]="!bookForm.valid">Add Book</button>
+</form>

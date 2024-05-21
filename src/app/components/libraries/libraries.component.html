@@ -1,0 +1,12 @@
+<div *ngIf="libraries.length > 0; else noLibraries">
+    <h2>List of Libraries</h2>
+    <ul>
+        <li *ngFor="let library of libraries">
+            <h3>{{ library.name }}</h3>
+            <p>{{ library.location }}</p>
+        </li>
+    </ul>
+</div>
+<ng-template #noLibraries>
+    <p>No libraries available.</p>
+</ng-template>
