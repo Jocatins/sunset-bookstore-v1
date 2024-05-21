@@ -6,28 +6,30 @@ import { Observable } from "rxjs";
 	providedIn: "root",
 })
 export class LibraryService {
-	private librariesUrl = "assets/libraries.json";
-	private booksUrl = "assets/books.json";
+	private apiUrl = "http://localhost:3000";
 
 	constructor(private http: HttpClient) {}
 
 	getLibraries(): Observable<any> {
-		return this.http.get<any>(this.librariesUrl);
+		return this.http.get<any>(`${this.apiUrl}/libraries`);
 	}
+
 	getBooks(): Observable<any> {
-		return this.http.get<any>(this.booksUrl);
+		return this.http.get<any>(`${this.apiUrl}/books`);
 	}
+
 	addBook(book: any): Observable<any> {
 		const headers = new HttpHeaders({ "Content-Type": "application/json" });
-		return this.http.post<any>(this.booksUrl, book, { headers });
+		return this.http.post<any>(`${this.apiUrl}/books`, book, { headers });
 	}
+
 	assignBookToLibraries(
 		bookId: number,
 		libraryIds: number[]
 	): Observable<any> {
 		// Logic to update book's library associations
 		// Replace with actual API URL and method
-		return this.http.post<any>(`${this.booksUrl}/${bookId}/assign`, {
+		return this.http.patch<any>(`${this.apiUrl}/books/${bookId}`, {
 			libraryIds,
 		});
 	}
