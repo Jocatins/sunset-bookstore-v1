@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { LibrariesService } from "../../../assets/services/libraries.service";
 import { CommonModule } from "@angular/common";
+import { LibraryService } from "../../../assets/services/library.service";
 
 @Component({
 	selector: "app-book-form",
@@ -16,7 +16,7 @@ export class BookFormComponent implements OnInit {
 
 	constructor(
 		private fb: FormBuilder,
-		private librariesService: LibrariesService
+		private libraryService: LibraryService
 	) {
 		this.bookForm = this.fb.group({
 			title: ["", Validators.required],
@@ -25,7 +25,7 @@ export class BookFormComponent implements OnInit {
 		});
 	}
 	ngOnInit(): void {
-		this.librariesService.getLibraries().subscribe((data) => {
+		this.libraryService.getLibraries().subscribe((data) => {
 			this.libraries = data.libraries;
 		});
 	}
@@ -38,8 +38,8 @@ export class BookFormComponent implements OnInit {
 				libraries: this.bookForm.value.libraryIds,
 			};
 
-			this.librariesService.addBook(newBook).subscribe((book) => {
-				this.librariesService
+			this.libraryService.addBook(newBook).subscribe((book) => {
+				this.libraryService
 					.assignBookToLibraries(book.id, newBook.libraries)
 					.subscribe(() => {
 						alert(

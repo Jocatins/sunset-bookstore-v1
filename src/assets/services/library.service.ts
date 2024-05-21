@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 @Injectable({
 	providedIn: "root",
 })
-export class LibrariesService {
+export class LibraryService {
 	private librariesUrl = "assets/libraries.json";
 	private booksUrl = "assets/books.json";
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { LibrariesService } from "../../../assets/services/libraries.service";
 import { CommonModule } from "@angular/common";
+import { LibraryService } from "../../../assets/services/library.service";
 
 @Component({
 	selector: "app-libraries",
@@ -12,7 +12,7 @@ import { CommonModule } from "@angular/common";
 export class LibrariesComponent implements OnInit {
 	libraries: any[] = [];
 
-	constructor(private libraryService: LibrariesService) {}
+	constructor(private libraryService: LibraryService) {}
 
 	ngOnInit(): void {
 		this.libraryService.getLibraries().subscribe((data) => {
