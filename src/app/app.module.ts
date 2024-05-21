@@ -10,13 +10,14 @@ import { TopBarComponent } from "./top-bar/top-bar.component";
 import { LibrariesComponent } from "./components/libraries/libraries.component";
 import { AuthComponent } from "./components/auth/auth.component";
 import { BookFormComponent } from "./components/book-form/book-form.component";
+import { LibraryDetailComponent } from "./components/library-detail/library-detail.component";
 
 const routes: Routes = [
 	{ path: "login", component: AuthComponent },
 	{ path: "libraries", component: LibrariesComponent },
-	{ path: "libraries/:id", component: LibrariesComponent },
-	{ path: "libraries/:id/books", component: BookFormComponent },
-	{ path: "libraries/:id/books/:id", component: BookFormComponent },
+
+	{ path: "libraries/:libraryId", component: LibraryDetailComponent },
+	{ path: "add-book", component: BookFormComponent },
 	{ path: "", redirectTo: "/login", pathMatch: "full" },
 ];
 
@@ -33,9 +34,3 @@ const routes: Routes = [
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

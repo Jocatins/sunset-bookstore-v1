@@ -1,0 +1,12 @@
+<h2>{{ library.name }}</h2>
+<p>{{ library.location }}</p>
+
+<h3>Books</h3>
+<ul>
+    <li *ngFor="let book of library.books">
+        <p>Title: {{ book.title }}</p>
+        <p>Author: {{ book.author }}</p>
+        <p>Status: {{ book.status }}</p>
+        <p *ngIf="book.status === 'OUT'">Due Date: {{ book.dueDate }}</p>
+    </li>
+</ul>

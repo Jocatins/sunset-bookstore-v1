@@ -13,6 +13,9 @@ export class LibraryService {
 	getLibraries(): Observable<any> {
 		return this.http.get<any>(`${this.apiUrl}/libraries`);
 	}
+	getLibraryById(id: number): Observable<any> {
+		return this.http.get<any>(`${this.apiUrl}/libraries/${id}`);
+	}
 
 	getBooks(): Observable<any> {
 		return this.http.get<any>(`${this.apiUrl}/books`);

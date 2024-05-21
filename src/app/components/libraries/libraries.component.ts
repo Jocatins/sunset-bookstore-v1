@@ -1,11 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { LibraryService } from "../../../assets/services/library.service";
+import { RouterModule } from "@angular/router";
 
 @Component({
 	selector: "app-libraries",
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, RouterModule],
 	templateUrl: "./libraries.component.html",
 	styleUrl: "./libraries.component.css",
 })

@@ -28,17 +28,20 @@ export class AuthComponent {
 	}
 
 	onSubmit(): void {
+		// if (this.loginForm.valid) {
+		// 	const { username, password } = this.loginForm.value;
+		// 	this.authService.login(username, password).subscribe(
+		// 		(response) => {
+		// 			// Navigate to a different page after successful login
+		// 			this.router.navigate(["/libraries"]);
+		// 		},
+		// 		(error) => {
+		// 			this.errorMessage = "Invalid username or password";
+		// 		}
+		// 	);
+		// }
 		if (this.loginForm.valid) {
-			const { username, password } = this.loginForm.value;
-			this.authService.login(username, password).subscribe(
-				(response) => {
-					// Navigate to a different page after successful login
-					this.router.navigate(["/dashboard"]);
-				},
-				(error) => {
-					this.errorMessage = "Invalid username or password";
-				}
-			);
+			this.router.navigate(["/libraries"]);
 		}
 	}
 }
