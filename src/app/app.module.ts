@@ -10,6 +10,8 @@ import { LibrariesComponent } from "./components/libraries/libraries.component";
 import { BookFormComponent } from "./components/book-form/book-form.component";
 import { LibraryDetailComponent } from "./components/library-detail/library-detail.component";
 import { LoginComponent } from "./components/login/login.component";
+import { TopBarComponent } from "./top-bar/top-bar.component";
+import { BookStoreComponent } from "./components/book-store/book-store.component";
 
 const routes: Routes = [
 	{ path: "login", component: LoginComponent },
@@ -17,6 +19,7 @@ const routes: Routes = [
 
 	{ path: "libraries/:libraryId", component: LibraryDetailComponent },
 	{ path: "add-book", component: BookFormComponent },
+	{ path: "book", component: BookStoreComponent },
 	{ path: "", redirectTo: "/login", pathMatch: "full" },
 ];
 
@@ -29,8 +32,9 @@ const routes: Routes = [
 		LibrariesComponent,
 		BookFormComponent,
 		LoginComponent,
+		BookStoreComponent,
 	],
-	declarations: [AppComponent],
+	declarations: [AppComponent, TopBarComponent],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
