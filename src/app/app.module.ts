@@ -6,14 +6,13 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 
-import { TopBarComponent } from "./top-bar/top-bar.component";
 import { LibrariesComponent } from "./components/libraries/libraries.component";
-import { AuthComponent } from "./components/auth/auth.component";
 import { BookFormComponent } from "./components/book-form/book-form.component";
 import { LibraryDetailComponent } from "./components/library-detail/library-detail.component";
+import { LoginComponent } from "./components/login/login.component";
 
 const routes: Routes = [
-	{ path: "login", component: AuthComponent },
+	{ path: "login", component: LoginComponent },
 	{ path: "libraries", component: LibrariesComponent },
 
 	{ path: "libraries/:libraryId", component: LibraryDetailComponent },
@@ -29,8 +28,9 @@ const routes: Routes = [
 		RouterModule.forRoot(routes),
 		LibrariesComponent,
 		BookFormComponent,
+		LoginComponent,
 	],
-	declarations: [AppComponent, TopBarComponent],
+	declarations: [AppComponent],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

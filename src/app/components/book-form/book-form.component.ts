@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { LibraryService } from "../../../assets/services/library.service";
 
 @Component({
 	selector: "app-book-form",
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, ReactiveFormsModule],
 	templateUrl: "./book-form.component.html",
 	styleUrl: "./book-form.component.css",
 })
@@ -19,9 +19,12 @@ export class BookFormComponent implements OnInit {
 		private libraryService: LibraryService
 	) {
 		this.bookForm = this.fb.group({
-			title: ["", Validators.required],
-			author: ["", Validators.required],
-			ISBN: ["", Validators.required],
+			title: [""],
+			author: [""],
+			isbn: [""],
+			libraryId: [""],
+			status: ["IN"],
+			dueDate: [""],
 		});
 	}
 	ngOnInit(): void {
@@ -31,23 +34,27 @@ export class BookFormComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		if (this.bookForm.valid) {
-			const newBook = {
-				title: this.bookForm.value.title,
-				author: this.bookForm.value.author,
-				libraries: this.bookForm.value.libraryIds,
-			};
+		const book = {
+			title: this.bookForm.value.title,
+			author: this.bookForm.value.author,
+			isbn: this.bookForm.value.isbn,
+		};
 
-			this.libraryService.addBook(newBook).subscribe((book) => {
-				this.libraryService
-					.assignBookToLibraries(book.id, newBook.libraries)
-					.subscribe(() => {
-						alert(
-							"Book added and assigned to libraries successfully!"
-						);
-						this.bookForm.reset();
-					});
-			});
-		}
+		const libraryId = this.bookForm.value.libraryId;
+		const status = this.bookForm.value.status;
+		const dueDate = this.bookForm.value.dueDate;
+
+		this.libraryService.addBook(book).subscribe((newBook) => {
+			const bookAssignment = {
+				book_id: newBook.id,
+				status: status,
+				dueDate: dueDate,
+			};
+			this.libraryService
+				.assignBookToLibrary(libraryId, bookAssignment)
+				.subscribe(() => {
+					console.log("Book added and assigned successfully");
+				});
+		});
 	}
 }

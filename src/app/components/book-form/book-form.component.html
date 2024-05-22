@@ -1,18 +1,30 @@
-<h2>Add New Book</h2>
-<form (ngSubmit)="onSubmit()">
-    <div>
-        <label for="title">Title</label>
-        <input id="title" formControlName="title">
-    </div>
-    <div>
-        <label for="author">Author</label>
-        <input id="author" formControlName="author">
-    </div>
-    <div>
-        <label for="libraries">Assign to Libraries</label>
-        <select id="libraries" formControlName="libraryIds" multiple>
-            <option *ngFor="let library of libraries" [value]="library.id">{{ library.name }}</option>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label>
+        Title:
+        <input formControlName="title">
+    </label>
+    <label>
+        Author:
+        <input formControlName="author">
+    </label>
+    <label>
+        ISBN:
+        <input formControlName="isbn">
+    </label>
+    <label>
+        Library ID:
+        <input formControlName="libraryId">
+    </label>
+    <label>
+        Status:
+        <select formControlName="status">
+            <option value="IN">IN</option>
+            <option value="OUT">OUT</option>
         </select>
-    </div>
-    <button type="submit" [disabled]="!bookForm.valid">Add Book</button>
+    </label>
+    <label *ngIf="bookForm.value.status === 'OUT'">
+        Due Date:
+        <input type="date" formControlName="dueDate">
+    </label>
+    <button type="submit">Add Book</button>
 </form>
