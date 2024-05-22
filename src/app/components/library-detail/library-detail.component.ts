@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
 import { LibraryService } from "../../../assets/services/library.service";
+import { Library } from "../../../assets/models/Library";
 
 import { catchError } from "rxjs/operators";
 import { of } from "rxjs";
@@ -15,7 +16,7 @@ import { of } from "rxjs";
 	styleUrl: "./library-detail.component.css",
 })
 export class LibraryDetailComponent implements OnInit {
-	library: any;
+	library: Library | null = null;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -35,6 +36,7 @@ export class LibraryDetailComponent implements OnInit {
 					})
 				)
 				.subscribe((library) => {
+					console.log("Library Data:", library);
 					this.library = library;
 				});
 		} else {

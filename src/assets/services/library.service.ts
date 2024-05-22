@@ -26,15 +26,6 @@ export class LibraryService {
 		return this.http.post<any>(`${this.apiUrl}/books`, book, { headers });
 	}
 
-	// assignBookToLibraries(
-	// 	bookId: number,
-	// 	libraryIds: number[]
-	// ): Observable<any> {
-	// 	// Logic to update book's library associations
-	// 	return this.http.patch<any>(`${this.apiUrl}/books/${bookId}`, {
-	// 		libraryIds,
-	// 	});
-	// }
 	assignBookToLibrary(libraryId: number, book: any): Observable<any> {
 		const headers = new HttpHeaders({ "Content-Type": "application/json" });
 		return this.http.post<any>(

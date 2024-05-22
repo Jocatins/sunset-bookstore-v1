@@ -3,6 +3,8 @@ import { CommonModule } from "@angular/common";
 import { LibraryService } from "../../../assets/services/library.service";
 import { RouterModule } from "@angular/router";
 
+import { Library } from "../../../assets/models/Library";
+
 @Component({
 	selector: "app-libraries",
 	standalone: true,
@@ -11,7 +13,7 @@ import { RouterModule } from "@angular/router";
 	styleUrl: "./libraries.component.css",
 })
 export class LibrariesComponent implements OnInit {
-	libraries: any[] = [];
+	libraries: Library[] = [];
 	errorMessage: string | null = null;
 
 	constructor(private libraryService: LibraryService) {}

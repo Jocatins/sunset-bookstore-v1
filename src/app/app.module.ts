@@ -17,7 +17,7 @@ const routes: Routes = [
 	{ path: "login", component: LoginComponent },
 	{ path: "libraries", component: LibrariesComponent },
 
-	{ path: "libraries/:libraryId", component: LibraryDetailComponent },
+	{ path: "libraries/:id", component: LibraryDetailComponent },
 	{ path: "add-book", component: BookFormComponent },
 	{ path: "book", component: BookStoreComponent },
 	{ path: "", redirectTo: "/login", pathMatch: "full" },

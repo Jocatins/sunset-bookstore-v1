@@ -1,0 +1,66 @@
+/* Container for the list of libraries */
+div.libraries-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Header for the list */
+.libraries-container h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Unordered list styling */
+.libraries-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* List item styling */
+.libraries-container li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Library name link */
+.libraries-container li h3 a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.libraries-container li h3 a:hover {
+    color: #0056b3;
+}
+
+/* Library location */
+.libraries-container li p {
+    margin: 5px 0 0;
+    color: #616161;
+}
+
+/* No libraries available message */
+.no-libraries-message {
+    text-align: center;
+    color: #ff0000;
+    font-size: 18px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
