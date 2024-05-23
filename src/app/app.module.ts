@@ -12,11 +12,14 @@ import { LibraryDetailComponent } from "./components/library-detail/library-deta
 import { LoginComponent } from "./components/login/login.component";
 import { TopBarComponent } from "./top-bar/top-bar.component";
 import { BookStoreComponent } from "./components/book-store/book-store.component";
+import { LibraryListComponent } from "./components/library-list/library-list.component";
+import { RegisterComponent } from "./components/register/register.component";
 
 const routes: Routes = [
 	{ path: "login", component: LoginComponent },
+	{ path: "register", component: RegisterComponent },
 	{ path: "libraries", component: LibrariesComponent },
-
+	{ path: "library", component: LibraryListComponent },
 	{ path: "libraries/:id", component: LibraryDetailComponent },
 	{ path: "add-book", component: BookFormComponent },
 	{ path: "book", component: BookStoreComponent },
@@ -33,6 +36,8 @@ const routes: Routes = [
 		BookFormComponent,
 		LoginComponent,
 		BookStoreComponent,
+		LibraryListComponent,
+		RegisterComponent,
 	],
 	declarations: [AppComponent, TopBarComponent],
 	bootstrap: [AppComponent],

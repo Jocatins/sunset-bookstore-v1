@@ -1,11 +1,20 @@
-<div class="library-detail" *ngIf="library">
-    <h3>Books</h3>
+<div class="library-detail" *ngIf="library" class="book-container">
+    <h3>Books in {{library.name}} </h3>
     <ul>
         <li *ngFor="let book of library.books">
-            <p>Title: {{ book.title }}</p>
+            <p class="book-title">Title: {{ book.title }}</p>
             <p>Author: {{ book.author }}</p>
             <p>Status: {{ book.status }}</p>
             <p *ngIf="book.status === 'OUT'">Due Date: {{ book.dueDate }}</p>
         </li>
     </ul>
+    <div>
+        <a routerLink="/libraries">
+            <button>Back</button>
+        </a>
+        <a routerLink="/add-book">
+            <button>Add Book</button>
+        </a>
+
+    </div>
 </div>

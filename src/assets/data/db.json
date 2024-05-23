@@ -76,6 +76,26 @@
       "username": "user2",
       "password": "password2",
       "token": "user2-token"
+    },
+    {
+      "id": "76ce",
+      "username": "user1",
+      "password": "password1"
+    },
+    {
+      "id": "c33a",
+      "username": "user2",
+      "password": "password2"
+    },
+    {
+      "id": "cc50",
+      "username": "admin",
+      "password": "password1"
+    },
+    {
+      "id": "e8ed",
+      "username": "admin",
+      "password": "1232"
     }
   ],
   "books": [

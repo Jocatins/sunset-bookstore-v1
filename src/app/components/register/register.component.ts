@@ -10,13 +10,13 @@ import { AuthService } from "../../../assets/services/auth.service";
 import { CommonModule } from "@angular/common";
 
 @Component({
-	selector: "app-login",
+	selector: "app-register",
 	standalone: true,
 	imports: [CommonModule, ReactiveFormsModule],
-	templateUrl: "./login.component.html",
-	styleUrl: "./login.component.css",
+	templateUrl: "./register.component.html",
+	styleUrl: "./register.component.css",
 })
-export class LoginComponent {
+export class RegisterComponent {
 	loginForm: FormGroup;
 	errorMessage: string | null = null;
 	isLoading: boolean = false;
@@ -31,6 +31,7 @@ export class LoginComponent {
 			password: ["", Validators.required],
 		});
 	}
+
 	onSubmit() {
 		if (this.loginForm.invalid) {
 			return;
@@ -52,10 +53,5 @@ export class LoginComponent {
 				this.errorMessage = "Invalid username or password";
 			}
 		);
-	}
-
-	register() {
-		// console.log("why not routing");
-		this.router.navigate(["/register"]);
 	}
 }

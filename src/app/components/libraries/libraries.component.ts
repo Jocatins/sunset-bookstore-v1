@@ -1,7 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { LibraryService } from "../../../assets/services/library.service";
 import { RouterModule } from "@angular/router";
+import { LibraryService } from "../../../assets/services/library.service";
+import { AuthService } from "../../../assets/services/auth.service";
+
+import { Router } from "@angular/router";
 
 import { Library } from "../../../assets/models/Library";
 
@@ -16,7 +19,11 @@ export class LibrariesComponent implements OnInit {
 	libraries: Library[] = [];
 	errorMessage: string | null = null;
 
-	constructor(private libraryService: LibraryService) {}
+	constructor(
+		private libraryService: LibraryService,
+		private authService: AuthService,
+		private router: Router
+	) {}
 
 	ngOnInit(): void {
 		this.libraryService.getLibraries().subscribe(
@@ -28,5 +35,9 @@ export class LibrariesComponent implements OnInit {
 				console.error(error);
 			}
 		);
+	}
+	public logout() {
+		this.authService.logout();
+		this.router.navigate(["/login"]);
 	}
 }

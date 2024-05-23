@@ -90,17 +90,15 @@ button:hover {
     background-color: #ffb95d;
 }
 
-.forgot-password,
-.register {
+.forgot-password {
     display: block;
-    margin-top: 15px;
-    color: #FF7F50;
+    margin-top: 1rem;
+    color: #FFAF45;
     text-decoration: none;
-    cursor: pointer;
+    font-size: 14px;
 }
 
-.forgot-password:hover,
-.register:hover {
+.forgot-password:hover {
     text-decoration: underline;
 }
 

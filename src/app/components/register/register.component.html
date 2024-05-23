@@ -5,7 +5,7 @@
     <div class="right">
         <div class="login-container">
             <img src="assets/img/sunset-logo.png" alt="Logo" class="logo">
-            <h2>Welcome Back!</h2>
+            <h2>Sign Up!</h2>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -16,10 +16,9 @@
                     <input type="password" id="password" formControlName="password" name="password" required>
                 </div>
                 <button type="submit" [disabled]="isLoading || loginForm.invalid">Submit</button>
+
                 <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
             </form>
-            <a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
-            <a class="register" (click)="register()">New Customer? Then click to register</a>
         </div>
     </div>
 </div>

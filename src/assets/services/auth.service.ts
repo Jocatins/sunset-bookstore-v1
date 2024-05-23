@@ -7,7 +7,7 @@ import { map, catchError } from "rxjs/operators";
 	providedIn: "root",
 })
 export class AuthService {
-	private apiUrl = "http://localhost:3000/users";
+	private apiUrl = "http://localhost:3000";
 
 	constructor(private http: HttpClient) {}
 
@@ -15,19 +15,18 @@ export class AuthService {
 		const headers = new HttpHeaders({ "Content-Type": "application/json" });
 		return this.http
 			.post<any>(
-				`${this.apiUrl}/login`,
+				`${this.apiUrl}/users`,
 				{ username, password },
 				{ headers }
 			)
 			.pipe(
 				map((response) => {
-					// Store the token
 					localStorage.setItem("auth_token", response.token);
 					return response;
 				}),
 				catchError((error) => {
 					console.error("Login error:", error);
-					return of(null);
+					return of({ error: "Login failed" });
 				})
 			);
 	}

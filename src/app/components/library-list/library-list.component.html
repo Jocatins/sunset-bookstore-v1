@@ -1,0 +1,59 @@
+<div class="navbar">
+    <div class="navbar-logo">
+        <img src="assets/img/sunset-logo.png" alt="Logo" />
+    </div>
+    <div class="navbar-search">
+        <input type="text" placeholder="Search" />
+    </div>
+    <div class="navbar-user">
+        <img src="assets/img/user-image.jpg" alt="User" />
+    </div>
+</div>
+
+
+<div class="library-container">
+    <div class="header">
+        <h1>All Libraries</h1>
+        <div class="actions">
+            <button class="export-button">Export Data</button>
+            <button class="new-library-button">New Library</button>
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="search-input" />
+        <button class="reset-button">RESET</button>
+    </div>
+    <table class="library-table">
+        <thead>
+            <tr>
+                <th>Library</th>
+                <th>Library Type</th>
+                <th>Location</th>
+                <th>Books Available</th>
+                <th>Action Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let library of libraries">
+                <td>{{ library.name }}</td>
+                <td>{{ library.type }}</td>
+                <td>{{ library.location }}</td>
+                <td>
+                    <div class="books-list">
+                        <span *ngFor="let book of library.books" class="book">{{ book }}</span>
+                        <span class="see-more">See More</span>
+                    </div>
+                </td>
+                <td>
+                    <button class="view-button">👁️</button>
+                    <button class="delete-button">🗑️</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button class="prev-page">❮</button>
+        <span class="current-page">1</span>
+        <button class="next-page">❯</button>
+    </div>
+</div>
