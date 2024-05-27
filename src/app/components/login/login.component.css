@@ -39,12 +39,14 @@ body {
 
 .form-group {
     margin-bottom: 15px;
+
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    text-align: left;
 }
 
 .form-group input {
@@ -73,6 +75,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.error-message {
+    color: red;
+}
+
 button {
     width: 100%;
     padding: 10px;
@@ -90,7 +96,15 @@ button:hover {
     background-color: #ffb95d;
 }
 
-.forgot-password,
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    color: #6DAFAC;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: left;
+}
+
 .register {
     display: block;
     margin-top: 15px;
@@ -110,7 +124,10 @@ button:hover {
         height: auto;
     }
 
-    .left,
+    .left {
+        display: none;
+    }
+
     .right {
         flex: none;
         width: 100%;

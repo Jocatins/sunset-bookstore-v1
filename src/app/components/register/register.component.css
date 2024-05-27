@@ -108,7 +108,10 @@ button:hover {
         height: auto;
     }
 
-    .left,
+    .left {
+        display: none;
+    }
+
     .right {
         flex: none;
         width: 100%;

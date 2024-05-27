@@ -19,7 +19,6 @@ import { CommonModule } from "@angular/common";
 export class LoginComponent {
 	loginForm: FormGroup;
 	errorMessage: string | null = null;
-	isLoading: boolean = false;
 
 	constructor(
 		private fb: FormBuilder,
@@ -31,31 +30,33 @@ export class LoginComponent {
 			password: ["", Validators.required],
 		});
 	}
+
 	onSubmit() {
 		if (this.loginForm.invalid) {
 			return;
 		}
-		this.isLoading = true;
+
 		const { username, password } = this.loginForm.value;
 
-		this.authService.login(username, password).subscribe(
-			(response) => {
-				this.isLoading = false;
-				if (response.error) {
+		if (username === "admin" && password === "kaapisoft") {
+			this.authService.login(username, password).subscribe(
+				(response) => {
+					if (response.error) {
+						this.errorMessage = "Invalid username or password";
+					} else {
+						this.router.navigate(["/libraries"]);
+					}
+				},
+				(error) => {
 					this.errorMessage = "Invalid username or password";
-				} else {
-					this.router.navigate(["/libraries"]);
 				}
-			},
-			(error) => {
-				this.isLoading = false;
-				this.errorMessage = "Invalid username or password";
-			}
-		);
+			);
+		} else {
+			this.errorMessage = "Invalid username or password"; // Set error message if credentials are incorrect
+		}
 	}
 
 	register() {
-		// console.log("why not routing");
 		this.router.navigate(["/register"]);
 	}
 }

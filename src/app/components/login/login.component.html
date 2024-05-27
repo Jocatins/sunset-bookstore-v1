@@ -15,11 +15,11 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" formControlName="password" name="password" required>
                 </div>
-                <button type="submit" [disabled]="isLoading || loginForm.invalid">Submit</button>
                 <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+                <button type="submit">LOG IN</button>
             </form>
             <a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
-            <a class="register" (click)="register()">New Customer? Then click to register</a>
+            <!-- <a class="register" (click)="register()">New Customer? Then click to register</a> -->
         </div>
     </div>
 </div>
