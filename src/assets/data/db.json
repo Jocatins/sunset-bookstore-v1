@@ -9,6 +9,7 @@
           "id": 101,
           "title": "The Great Gatsby",
           "author": "F. Scott Fitzgerald",
+          "description": "A great novel, and also lovely film",
           "status": "IN",
           "dueDate": null
         },
@@ -16,6 +17,7 @@
           "id": 102,
           "title": "1984",
           "author": "George Orwell",
+          "description": "A great novel, and also lovely film",
           "status": "OUT",
           "dueDate": "2024-06-01"
         }
@@ -30,6 +32,7 @@
           "id": 201,
           "title": "To Kill a Mockingbird",
           "author": "Harper Lee",
+          "description": "A great novel, and also lovely film",
           "status": "IN",
           "dueDate": null
         },
@@ -37,16 +40,25 @@
           "id": 202,
           "title": "Brave New World",
           "author": "Aldous Huxley",
+          "description": "A great novel, and also lovely film",
           "status": "OUT",
           "dueDate": "2024-06-15"
         },
         {
-          "id": 1716793225932,
-          "title": "New book",
-          "author": "Jocatins",
-          "description": "where are thee",
+          "id": 1716551664422,
+          "title": "oliver twist",
+          "author": "Charles dickens",
+          "description": "Funny plot",
           "status": "IN",
-          "dueDate": "2024-05-30"
+          "dueDate": "2024-05-25"
+        },
+        {
+          "id": 1716561483526,
+          "title": "New book",
+          "author": "James brown",
+          "description": "Here we are",
+          "status": "IN",
+          "dueDate": "2024-05-04"
         }
       ]
     },
@@ -116,24 +128,19 @@
       "password": "123456"
     },
     {
-      "id": "ac0a",
-      "username": "Jocatins",
-      "password": "12345"
+      "id": "f358",
+      "username": "jocatins",
+      "password": "kaapi-sof"
     },
     {
-      "id": "5233",
-      "username": "admin",
-      "password": "wee"
-    },
-    {
-      "id": "21b2",
+      "id": "fc21",
       "username": "admin",
       "password": "kaapi"
     },
     {
-      "id": "4f25",
-      "username": "admin",
-      "password": "wwwww"
+      "id": "e25c",
+      "username": "Jocatins",
+      "password": "12345"
     }
   ],
   "books": [

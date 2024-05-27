@@ -1,45 +1,48 @@
 <app-navbar></app-navbar>
 
-<div class="form-container">
-    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="library">Select Library:</label>
-            <select id="library" required [formControl]="selectedLibraryId">
-                <option *ngFor="let library of libraries" [value]="library.id">{{ library.name }}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="title">Book Title</label>
-            <input type="text" id="title" name="isbn" formControlName="title" />
-        </div>
-        <div class="form-group">
-            <label for="author">Author</label>
-            <input type="text" id="author" formControlName="author" />
-        </div>
+<div class="container">
+    <h3>Hello</h3>
+    <div class="form-container">
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="library">Select Library:</label>
+                <select id="library" required [formControl]="selectedLibraryId">
+                    <option *ngFor="let library of libraries" [value]="library.id">{{ library.name }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">Book Title</label>
+                <input type="text" id="title" name="isbn" formControlName="title" />
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" formControlName="author" />
+            </div>
 
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea id="description" formControlName="description"></textarea>
-        </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" formControlName="description"></textarea>
+            </div>
 
-        <div class="form-group">
-            <label for="status">Status:</label>
-            <select id="status" formControlName="status">
-                <option value="IN">IN</option>
-                <option value="OUT">OUT</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" formControlName="status">
+                    <option value="IN">IN</option>
+                    <option value="OUT">OUT</option>
+                </select>
+            </div>
 
 
-        <div class="form-group">
-            <label for="dueDate">Due Date:</label>
-            <input type="date" id="dueDate" formControlName="dueDate">
-        </div>
+            <div class="form-group">
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" formControlName="dueDate">
+            </div>
 
-        <div class="form-actions">
-            <button type="button" class="cancel-btn">Cancel</button>
-            <button type="submit" class="save-btn" type="submit"
-                [disabled]="bookForm.invalid || !selectedLibraryId">Save</button>
-        </div>
-    </form>
+            <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn" type="submit"
+                    [disabled]="bookForm.invalid || !selectedLibraryId">Save</button>
+            </div>
+        </form>
+    </div>
 </div>
