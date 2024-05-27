@@ -28,6 +28,14 @@
           "description": "Quickly and Quietly",
           "status": "IN",
           "dueDate": "2024-05-14"
+        },
+        {
+          "id": 1716824398570,
+          "title": "Blueprint",
+          "author": "Nic Khamen",
+          "description": "The recipe is H20",
+          "status": "OUT",
+          "dueDate": ""
         }
       ]
     },
@@ -265,6 +273,11 @@
     },
     {
       "id": "dfe8",
+      "username": "admin",
+      "password": "kaapisoft"
+    },
+    {
+      "id": "4d8c",
       "username": "admin",
       "password": "kaapisoft"
     }

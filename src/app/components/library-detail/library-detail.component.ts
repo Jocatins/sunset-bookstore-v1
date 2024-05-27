@@ -48,4 +48,7 @@ export class LibraryDetailComponent implements OnInit {
 	addBookRoute() {
 		this.router.navigate(["/add-book"]);
 	}
+	backToLibraries() {
+		this.router.navigate(["/libraries"]);
+	}
 }
