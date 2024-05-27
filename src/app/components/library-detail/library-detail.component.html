@@ -3,14 +3,19 @@
 <div class="library-container" *ngIf="library">
     <div class="header">
 
-        <h3>Books in {{library.name}} </h3>
-        <h1>{{library.name}}</h1>
+        <!-- <h3>Books in {{library.name}} </h3> -->
+        <p>Libraries /
+            <strong>{{library.name}}</strong>
+        </p>
         <div class="actions">
 
-            <button class="new-library-button" (click)="addBookRoute()">Add Book</button>
+            <button class="new-library-button" (click)="addBookRoute()">New Book</button>
         </div>
 
     </div>
+    <h3>Showing <span style="color: #FFAF45;">All Books</span></h3>
+
+    <p>Search via keyword</p>
     <div class="search-container">
         <input type="text" placeholder="Search" class="search-input" />
 
@@ -34,7 +39,7 @@
                 </td>
 
                 <td>{{ book.author }}</td>
-                <td>{{ book.description }}<span class="see-more"> See More</span></td>
+                <td>{{ book.description }}</td>
                 <td>{{ book.status }}</td>
                 <td>{{ book.dueDate }}</td>
             </tr>

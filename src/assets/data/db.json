@@ -20,6 +20,14 @@
           "description": "A great novel, and also lovely film",
           "status": "OUT",
           "dueDate": "2024-06-01"
+        },
+        {
+          "id": 1716823519183,
+          "title": "Titan and Gypsies",
+          "author": "Nico Phills",
+          "description": "Quickly and Quietly",
+          "status": "IN",
+          "dueDate": "2024-05-14"
         }
       ]
     },
@@ -45,17 +53,17 @@
           "dueDate": "2024-06-15"
         },
         {
-          "id": 1716551664422,
-          "title": "oliver twist",
-          "author": "Charles dickens",
+          "id": 203,
+          "title": "Oliver Twist",
+          "author": "Charles Dickens",
           "description": "Funny plot",
           "status": "IN",
           "dueDate": "2024-05-25"
         },
         {
-          "id": 1716561483526,
-          "title": "New book",
-          "author": "James brown",
+          "id": 204,
+          "title": "New Book",
+          "author": "James Brown",
           "description": "Here we are",
           "status": "IN",
           "dueDate": "2024-05-04"
@@ -80,6 +88,114 @@
           "author": "Jane Austen",
           "status": "OUT",
           "dueDate": "2024-05-25"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Northside Branch",
+      "location": "321 Pine St, Anytown",
+      "books": [
+        {
+          "id": 401,
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "description": "A great novel",
+          "status": "IN",
+          "dueDate": null
+        },
+        {
+          "id": 402,
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "description": "A great novel, and also lovely film",
+          "status": "OUT",
+          "dueDate": "2024-07-01"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Southside Branch",
+      "location": "654 Maple St, Anytown",
+      "books": [
+        {
+          "id": 501,
+          "title": "War and Peace",
+          "author": "Leo Tolstoy",
+          "description": "A great novel",
+          "status": "IN",
+          "dueDate": null
+        },
+        {
+          "id": 502,
+          "title": "Crime and Punishment",
+          "author": "Fyodor Dostoevsky",
+          "description": "A great novel",
+          "status": "OUT",
+          "dueDate": "2024-06-10"
+        },
+        {
+          "id": 1716818775630,
+          "title": "Range pool",
+          "author": "Disciple F",
+          "description": "Thank you",
+          "status": "OUT",
+          "dueDate": "2024-05-30"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Uptown Branch",
+      "location": "987 Cedar St, Anytown",
+      "books": [
+        {
+          "id": 601,
+          "title": "Great Expectations",
+          "author": "Charles Dickens",
+          "description": "A great novel",
+          "status": "IN",
+          "dueDate": null
+        },
+        {
+          "id": 602,
+          "title": "Jane Eyre",
+          "author": "Charlotte Brontë",
+          "description": "A great novel",
+          "status": "OUT",
+          "dueDate": "2024-06-20"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Downtown Branch",
+      "location": "321 Birch St, Anytown",
+      "books": [
+        {
+          "id": 701,
+          "title": "Anna Karenina",
+          "author": "Leo Tolstoy",
+          "description": "A great novel",
+          "status": "IN",
+          "dueDate": null
+        },
+        {
+          "id": 702,
+          "title": "The Brothers Karamazov",
+          "author": "Fyodor Dostoevsky",
+          "description": "A great novel",
+          "status": "OUT",
+          "dueDate": "2024-06-30"
+        },
+        {
+          "id": 1716818836050,
+          "title": "Another book",
+          "author": "Tems ",
+          "description": "I will be down when you call ",
+          "status": "IN",
+          "dueDate": "2024-05-24"
         }
       ]
     }
@@ -141,56 +257,16 @@
       "id": "e25c",
       "username": "Jocatins",
       "password": "12345"
-    }
-  ],
-  "books": [
-    {
-      "id": "1",
-      "title": "The Davinci Code",
-      "author": "Dan Brown",
-      "isbn": "ISBN-01"
     },
     {
-      "id": "2",
-      "title": "Titans and Gypsies",
-      "author": "Nico Khamen",
-      "isbn": "ISBN-02"
+      "id": "87eb",
+      "username": "admin",
+      "password": "kaapisoft"
     },
     {
-      "id": "8765",
-      "title": "sdss",
-      "author": "ddss",
-      "isbn": "sss"
-    },
-    {
-      "id": "98d0",
-      "title": "sdss",
-      "author": "ddss",
-      "isbn": "sss"
-    },
-    {
-      "id": "ded6",
-      "title": "sdss",
-      "author": "ddss",
-      "isbn": "sss"
-    },
-    {
-      "id": "70bf",
-      "title": "sdss",
-      "author": "ddss",
-      "isbn": "sss"
-    },
-    {
-      "id": "9b07",
-      "title": "new",
-      "author": "sam",
-      "isbn": "231"
-    },
-    {
-      "id": "2fcd",
-      "title": "tr",
-      "author": "ew",
-      "isbn": "s22"
+      "id": "dfe8",
+      "username": "admin",
+      "password": "kaapisoft"
     }
   ]
 }

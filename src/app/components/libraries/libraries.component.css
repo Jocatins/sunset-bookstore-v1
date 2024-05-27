@@ -3,8 +3,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
-
 .library-container {
     width: 80%;
     margin: 0 auto;
@@ -19,7 +17,11 @@ body {
 }
 
 .header h1 {
-    color: #FF7F50;
+    color: #000;
+}
+
+.header h3 {
+    text-align: left;
 }
 
 .actions {
@@ -40,7 +42,7 @@ body {
 }
 
 .new-library-button {
-    background-color: #FF7F50;
+    background-color: #FFAF45;
     color: white;
 }
 

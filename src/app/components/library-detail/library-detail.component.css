@@ -13,11 +13,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
 .header h1 {
-    color: #FF7F50;
+    color: #000;
+    font-size: 24px;
+
 }
 
 .actions {
@@ -38,7 +41,7 @@ body {
 }
 
 .new-library-button {
-    background-color: #FF7F50;
+    background-color: #FFAF45;
     color: white;
 }
 
