@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, RouterModule } from "@angular/router";
+import { ActivatedRoute, RouterModule, Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
 import { LibraryService } from "../../../assets/services/library.service";
 import { Library } from "../../../assets/models/Library";
+import { NavbarComponent } from "../navbar/navbar.component";
 
 import { catchError } from "rxjs/operators";
 import { of } from "rxjs";
@@ -11,7 +12,7 @@ import { of } from "rxjs";
 @Component({
 	selector: "app-library-detail",
 	standalone: true,
-	imports: [CommonModule, RouterModule],
+	imports: [CommonModule, RouterModule, NavbarComponent],
 	templateUrl: "./library-detail.component.html",
 	styleUrl: "./library-detail.component.css",
 })
@@ -20,7 +21,8 @@ export class LibraryDetailComponent implements OnInit {
 
 	constructor(
 		private route: ActivatedRoute,
-		private libraryService: LibraryService
+		private libraryService: LibraryService,
+		private router: Router
 	) {}
 
 	ngOnInit(): void {
@@ -42,5 +44,8 @@ export class LibraryDetailComponent implements OnInit {
 		} else {
 			console.error("Invalid library ID");
 		}
+	}
+	addBookRoute() {
+		this.router.navigate(["/add-book"]);
 	}
 }

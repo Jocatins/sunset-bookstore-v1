@@ -39,6 +39,14 @@
           "author": "Aldous Huxley",
           "status": "OUT",
           "dueDate": "2024-06-15"
+        },
+        {
+          "id": 1716793225932,
+          "title": "New book",
+          "author": "Jocatins",
+          "description": "where are thee",
+          "status": "IN",
+          "dueDate": "2024-05-30"
         }
       ]
     },
@@ -96,6 +104,16 @@
       "id": "e8ed",
       "username": "admin",
       "password": "1232"
+    },
+    {
+      "id": "e60b",
+      "username": "admin",
+      "password": "erew"
+    },
+    {
+      "id": "7e22",
+      "username": "admin@darey.io",
+      "password": "123456"
     }
   ],
   "books": [

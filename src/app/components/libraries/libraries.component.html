@@ -1,26 +1,55 @@
-<div *ngIf="libraries.length > 0; else noLibraries" class="libraries-container">
-    <h2>List of Libraries</h2>
-    <ul>
-        <li *ngFor="let library of libraries">
-            <h3>
-                <a [title]="library.name + ' details'" [routerLink]="['/libraries', library.id]">
+<app-navbar></app-navbar>
+
+
+<div class="library-container">
+    <div class="header">
+        <h1>All Libraries</h1>
+        <div class="actions">
+            <button class="export-button">Export Data</button>
+            <button class="new-library-button">New Library</button>
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="search-input" />
+        <!-- <span class="search-icon">🔍</span> -->
+        <button class="reset-button">RESET</button>
+    </div>
+
+    <table class="library-table" *ngIf="libraries.length > 0; else noLibraries">
+        <thead>
+            <tr>
+                <th>Library</th>
+                <th>Location</th>
+                <th>Books</th>
+                <th>Action Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let library of libraries">
+                <td [title]="library.name + ' details'" (click)="routeToBook(library.id)" class="library-name">
                     {{ library.name }}
-                </a>
-            </h3>
-            <p>{{ library.location }}</p>
-            <ul>
-                <li *ngFor="let book of library.books">
-                    Title: {{ book.title }}, Author: {{ book.author }}
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <div>
+                </td>
+                <td [title]="library.location + ' details'">{{ library.location }}</td>
+                <td>
+                    <div class="books-list">
+                        <span class="book" *ngFor="let book of library.books">{{ book.title }}</span>
+                        <span class="see-more">See More</span>
+                    </div>
+                </td>
+                <td>
+                    <button class="view-button" title="View Library">👁️</button>
+                    <button class="delete-button" title="Delete Library">🗑️</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #noLibraries>
+        <p>No libraries available.</p>
+    </ng-template>
 
-        <button (click)="logout()">Logout</button>
-
+    <div class="pagination">
+        <button class="prev-page">Previous</button>
+        <span class="current-page"></span>
+        <button class="next-page">Next</button>
     </div>
 </div>
-<ng-template #noLibraries>
-    <p>No libraries available.</p>
-</ng-template>

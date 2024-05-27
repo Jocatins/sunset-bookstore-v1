@@ -14,6 +14,7 @@ import { TopBarComponent } from "./top-bar/top-bar.component";
 import { BookStoreComponent } from "./components/book-store/book-store.component";
 import { LibraryListComponent } from "./components/library-list/library-list.component";
 import { RegisterComponent } from "./components/register/register.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 const routes: Routes = [
 	{ path: "login", component: LoginComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
 		ReactiveFormsModule,
 		HttpClientModule,
 		RouterModule.forRoot(routes),
+		NavbarComponent,
 		LibrariesComponent,
 		BookFormComponent,
 		LoginComponent,

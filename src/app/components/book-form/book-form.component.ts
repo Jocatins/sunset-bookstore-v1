@@ -1,60 +1,70 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import {
+	FormBuilder,
+	FormGroup,
+	ReactiveFormsModule,
+	Validators,
+	FormControl,
+} from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { LibraryService } from "../../../assets/services/library.service";
+import { BookService } from "../../../assets/services/book.service";
+import { Library } from "../../../assets/models/Library";
+import { Book } from "../../../assets/models/Book";
+import { Router } from "@angular/router";
+
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
 	selector: "app-book-form",
 	standalone: true,
-	imports: [CommonModule, ReactiveFormsModule],
+	imports: [CommonModule, ReactiveFormsModule, NavbarComponent],
 	templateUrl: "./book-form.component.html",
 	styleUrl: "./book-form.component.css",
 })
 export class BookFormComponent implements OnInit {
-	bookForm: FormGroup;
-	libraries: any[] = [];
+	libraries: Library[] = [];
+	selectedLibraryId = new FormControl();
+	bookForm!: FormGroup;
 
 	constructor(
 		private fb: FormBuilder,
-		private libraryService: LibraryService
-	) {
+		private bookService: BookService,
+		private router: Router
+	) {}
+	ngOnInit(): void {
 		this.bookForm = this.fb.group({
-			title: [""],
-			author: [""],
-			isbn: [""],
-			libraryId: [""],
-			status: ["IN"],
+			title: ["", Validators.required],
+			author: ["", Validators.required],
+			description: ["", Validators.required],
+			status: ["IN", Validators.required],
 			dueDate: [""],
 		});
+
+		this.loadLibraries();
 	}
-	ngOnInit(): void {
-		this.libraryService.getLibraries().subscribe((data) => {
-			this.libraries = data.libraries;
+
+	loadLibraries(): void {
+		this.bookService.getLibraries().subscribe((libraries) => {
+			this.libraries = libraries;
 		});
 	}
 
 	onSubmit(): void {
-		const book = {
-			title: this.bookForm.value.title,
-			author: this.bookForm.value.author,
-			isbn: this.bookForm.value.isbn,
-		};
-
-		const libraryId = this.bookForm.value.libraryId;
-		const status = this.bookForm.value.status;
-		const dueDate = this.bookForm.value.dueDate;
-
-		this.libraryService.addBook(book).subscribe((newBook) => {
-			const bookAssignment = {
-				book_id: newBook.id,
-				status: status,
-				dueDate: dueDate,
+		if (this.bookForm.valid && this.selectedLibraryId) {
+			const newBook: Book = {
+				id: new Date().getTime(),
+				...this.bookForm.value,
 			};
-			this.libraryService
-				.assignBookToLibrary(libraryId, bookAssignment)
-				.subscribe(() => {
-					console.log("Book added and assigned successfully");
+			const libraryId = this.selectedLibraryId.value;
+
+			this.bookService
+				.addBook(libraryId, newBook)
+				.subscribe((response) => {
+					console.log("Book added successfully", response);
+					window.alert("Book added successfully");
+					this.bookForm.reset({ status: "IN" });
+					this.router.navigate(["/libraries"]);
 				});
-		});
+		}
 	}
 }

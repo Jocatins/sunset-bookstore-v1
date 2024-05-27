@@ -1,20 +1,52 @@
-<div class="library-detail" *ngIf="library" class="book-container">
-    <h3>Books in {{library.name}} </h3>
-    <ul>
-        <li *ngFor="let book of library.books">
-            <p class="book-title">Title: {{ book.title }}</p>
-            <p>Author: {{ book.author }}</p>
-            <p>Status: {{ book.status }}</p>
-            <p *ngIf="book.status === 'OUT'">Due Date: {{ book.dueDate }}</p>
-        </li>
-    </ul>
-    <div>
-        <a routerLink="/libraries">
-            <button>Back</button>
-        </a>
-        <a routerLink="/add-book">
-            <button>Add Book</button>
-        </a>
+<app-navbar></app-navbar>
 
+<div class="library-container" *ngIf="library">
+    <div class="header">
+
+        <h3>Books in {{library.name}} </h3>
+        <h1>{{library.name}}</h1>
+        <div class="actions">
+
+            <button class="new-library-button" (click)="addBookRoute()">Add Book</button>
+        </div>
+
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="search-input" />
+
+        <button class="reset-button">RESET</button>
+    </div>
+
+    <table class="library-table" *ngIf="library">
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of library.books">
+                <td>
+                    <p class="book-title">{{ book.title }}</p>
+                </td>
+
+                <td>{{ book.author }}</td>
+                <td>{{ book.description }}<span class="see-more"> See More</span></td>
+                <td>{{ book.status }}</td>
+                <td>{{ book.dueDate }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #noLibraries>
+        <p>No libraries available.</p>
+    </ng-template>
+
+    <div class="pagination">
+        <button class="prev-page">Previous</button>
+        <span class="current-page"></span>
+        <button class="next-page">Next</button>
     </div>
 </div>

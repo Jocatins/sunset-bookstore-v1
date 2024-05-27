@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F7FEFA;
+    padding: 10px 20px;
+}
+
+.navbar-logo img {
+    height: 40px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.navbar-search input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.navbar-user img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 50px;
+}

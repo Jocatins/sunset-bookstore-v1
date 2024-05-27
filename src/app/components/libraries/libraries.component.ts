@@ -7,11 +7,12 @@ import { AuthService } from "../../../assets/services/auth.service";
 import { Router } from "@angular/router";
 
 import { Library } from "../../../assets/models/Library";
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
 	selector: "app-libraries",
 	standalone: true,
-	imports: [CommonModule, RouterModule],
+	imports: [CommonModule, RouterModule, NavbarComponent],
 	templateUrl: "./libraries.component.html",
 	styleUrl: "./libraries.component.css",
 })
@@ -39,5 +40,11 @@ export class LibrariesComponent implements OnInit {
 	public logout() {
 		this.authService.logout();
 		this.router.navigate(["/login"]);
+	}
+	public goToHome() {
+		this.router.navigate(["/login"]);
+	}
+	public routeToBook(libraryId: string) {
+		this.router.navigate(["/libraries", libraryId]);
 	}
 }
