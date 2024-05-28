@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
 
 import { Library } from "../../../assets/models/Library";
 import { NavbarComponent } from "../navbar/navbar.component";
+import { Auth1Service } from "../../../assets/services/auth1.service";
 
 @Component({
 	selector: "app-libraries",
@@ -22,7 +23,7 @@ export class LibrariesComponent implements OnInit {
 
 	constructor(
 		private libraryService: LibraryService,
-		private authService: AuthService,
+		private auth1Service: Auth1Service,
 		private router: Router
 	) {}
 
@@ -38,7 +39,7 @@ export class LibrariesComponent implements OnInit {
 		);
 	}
 	public logout() {
-		this.authService.logout();
+		this.auth1Service.logout();
 		this.router.navigate(["/login"]);
 	}
 	public goToHome() {

@@ -35,4 +35,5 @@ router-outlet+* {
 body,
 html {
   margin: 0;
+  font-family: 'Metropolis', sans-serif;
 }
