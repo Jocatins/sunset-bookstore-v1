@@ -6,7 +6,7 @@ import {
 	Validators,
 } from "@angular/forms";
 import { Router } from "@angular/router";
-import { AuthService } from "../../../assets/services/auth.service";
+import { Auth1Service } from "../../../assets/services/auth1.service";
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -22,8 +22,9 @@ export class LoginComponent {
 
 	constructor(
 		private fb: FormBuilder,
-		private authService: AuthService,
-		private router: Router
+		private authService: Auth1Service,
+		private router: Router,
+		private auth1Service: Auth1Service
 	) {
 		this.loginForm = this.fb.group({
 			username: ["", Validators.required],
@@ -39,18 +40,21 @@ export class LoginComponent {
 		const { username, password } = this.loginForm.value;
 
 		if (username === "admin" && password === "kaapisoft") {
-			this.authService.login(username, password).subscribe(
-				(response) => {
-					if (response.error) {
-						this.errorMessage = "Invalid username or password";
-					} else {
-						this.router.navigate(["/libraries"]);
-					}
-				},
-				(error) => {
-					this.errorMessage = "Invalid username or password";
-				}
-			);
+			// this.authService.login(username, password).subscribe(
+			// 	(response) => {
+			// 		if (response.error) {
+			// 			this.errorMessage = "Invalid username or password";
+			// 		} else {
+			// 			this.router.navigate(["/libraries"]);
+			// 		}
+			// 	},
+			// 	(error) => {
+			// 		this.errorMessage = "Invalid username or password";
+			// 	}
+			// );
+
+			this.auth1Service.login();
+			this.router.navigate(["/libraries"]);
 		} else {
 			this.errorMessage = "Invalid username or password"; // Set error message if credentials are incorrect
 		}
