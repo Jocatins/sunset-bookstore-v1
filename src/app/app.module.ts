@@ -10,7 +10,7 @@ import { LibrariesComponent } from "./components/libraries/libraries.component";
 import { BookFormComponent } from "./components/book-form/book-form.component";
 
 import { LoginComponent } from "./components/login/login.component";
-import { TopBarComponent } from "./top-bar/top-bar.component";
+
 import { BookStoreComponent } from "./components/book-store/book-store.component";
 import { LibraryListComponent } from "./components/library-list/library-list.component";
 import { RegisterComponent } from "./components/register/register.component";
@@ -31,7 +31,7 @@ import { AppRoutingModule } from "./app-routing.module";
 		RegisterComponent,
 		AppRoutingModule,
 	],
-	declarations: [AppComponent, TopBarComponent],
+	declarations: [AppComponent],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
