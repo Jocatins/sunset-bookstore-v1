@@ -29,7 +29,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let library of libraries">
-                <td [title]="library.name + ' details'" (click)="routeToBook(library.id)" class="library-name">
+                <td [title]="library.name + ' details'" (click)="routeToBook(library.id)" class="library-name"
+                    style="color: #FFAF45;">
                     {{ library.name }}
                 </td>
                 <td [title]="library.location + ' details'">{{ library.location }}</td>
