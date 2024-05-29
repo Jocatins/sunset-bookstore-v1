@@ -19,30 +19,6 @@ export class BookService {
 
 	constructor(private http: HttpClient) {}
 
-	// getBooks(): Observable<Library[]> {
-	// 	return this.http.get<any>(`${this.apiUrl}/books`);
-	// }
-
-	// getLibraries(): Observable<Library[]> {
-	// 	return this.http
-	// 		.get<Library[]>(this.apiUrl)
-	// 		.pipe(catchError(this.handleError<Library[]>("getLibraries", [])));
-	// }
-
-	// addBook(libraryId: string, book: Book): Observable<Library> {
-	// 	return this.http.get<Library>(`${this.apiUrl}/${libraryId}`).pipe(
-	// 		switchMap((library) => {
-	// 			library.books.push(book);
-	// 			return this.http.put<Library>(
-	// 				`${this.apiUrl}/${libraryId}`,
-	// 				library,
-	// 				httpOptions
-	// 			);
-	// 		}),
-	// 		catchError(this.handleError<Library>("addBook"))
-	// 	);
-	// }
-
 	getBooks(): Observable<Book[]> {
 		return this.http
 			.get<Book[]>(`${this.apiUrl}/books`)
