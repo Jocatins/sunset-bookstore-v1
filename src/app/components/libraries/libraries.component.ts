@@ -1,10 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
-import { LibraryService } from "../../../assets/services/library.service";
-import { AuthService } from "../../../assets/services/auth.service";
-
 import { Router } from "@angular/router";
+import { LibraryService } from "../../../assets/services/library.service";
 
 import { Library } from "../../../assets/models/Library";
 import { NavbarComponent } from "../navbar/navbar.component";
@@ -37,7 +35,15 @@ export class LibrariesComponent implements OnInit {
 				console.error(error);
 			}
 		);
+		this.loadLibraries();
 	}
+
+	loadLibraries(): void {
+		this.libraryService.getLibraries().subscribe((libraries) => {
+			console.log(libraries);
+		});
+	}
+
 	public logout() {
 		this.auth1Service.logout();
 		this.router.navigate(["/login"]);
@@ -47,5 +53,21 @@ export class LibrariesComponent implements OnInit {
 	}
 	public routeToBook(libraryId: string) {
 		this.router.navigate(["/libraries", libraryId]);
+	}
+
+	deleteLibrary(id: number): void {
+		window.alert("Are you sure");
+		this.libraryService.deleteLibrary(id).subscribe(
+			(response) => {
+				console.log("Library deleted successfully", response);
+				this.libraries = this.libraries.filter(
+					(library) => Number(library.id) !== id
+				);
+				this.loadLibraries();
+			},
+			(error) => {
+				console.error("Error deleting library", error);
+			}
+		);
 	}
 }

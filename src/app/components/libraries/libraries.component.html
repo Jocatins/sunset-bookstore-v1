@@ -41,8 +41,9 @@
                     </div>
                 </td>
                 <td>
-                    <button class="view-button" title="View Library">👁️</button>
-                    <button class="delete-button" title="Delete Library">🗑️</button>
+                    <button class="view-button" title="View Library" (click)="routeToBook(library.id)">👁️</button>
+                    <button class="delete-button" title="Delete Library"
+                        (click)="deleteLibrary(+library.id)">🗑️</button>
                 </td>
             </tr>
         </tbody>
