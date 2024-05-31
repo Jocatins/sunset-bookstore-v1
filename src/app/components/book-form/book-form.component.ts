@@ -67,4 +67,7 @@ export class BookFormComponent implements OnInit {
 				});
 		}
 	}
+	cancelButton() {
+		this.router.navigate(["/libraries"]);
+	}
 }

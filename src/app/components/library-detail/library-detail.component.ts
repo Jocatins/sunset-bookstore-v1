@@ -51,4 +51,7 @@ export class LibraryDetailComponent implements OnInit {
 	backToLibraries() {
 		this.router.navigate(["/libraries"]);
 	}
+	editBook(bookId: number) {
+		this.router.navigate(["/edit-book", bookId]);
+	}
 }

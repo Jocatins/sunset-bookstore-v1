@@ -39,7 +39,7 @@ export class LoginComponent {
 
 		const { username, password } = this.loginForm.value;
 
-		if (username === "admin" && password === "kaapisoft") {
+		if (username === "admin" && password === "admin") {
 			// this.authService.login(username, password).subscribe(
 			// 	(response) => {
 			// 		if (response.error) {

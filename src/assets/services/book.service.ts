@@ -14,7 +14,6 @@ const httpOptions = {
 	providedIn: "root",
 })
 export class BookService {
-	// private apiUrl = "http://localhost:3000/libraries";
 	private apiUrl = environment.apiUrl;
 
 	constructor(private http: HttpClient) {}

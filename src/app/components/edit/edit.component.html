@@ -3,7 +3,7 @@
 <div class="container">
 
     <div class="form-container">
-        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="bookForm" (ngSubmit)="saveBook()">
             <div class="form-group">
                 <label for="library">Select Library:</label>
                 <select id="library" required [formControl]="selectedLibraryId">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-actions">
-                <button type="button" class="cancel-btn" (click)="cancelButton()">Cancel</button>
+                <button type="button" class="cancel-btn">Cancel</button>
                 <button type="submit" class="save-btn" type="submit"
                     [disabled]="bookForm.invalid || !selectedLibraryId">Save</button>
             </div>

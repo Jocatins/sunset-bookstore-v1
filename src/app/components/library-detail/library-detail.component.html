@@ -34,7 +34,7 @@
         <tbody>
             <tr *ngFor="let book of library.books">
                 <td>
-                    <p class="book-title" style="color: #FFAF45;">{{ book.title }}</p>
+                    <p class="book-title" style="color: #FFAF45;" (click)="editBook(book.id)">{{ book.title }} </p>
                 </td>
 
                 <td>{{ book.author }}</td>

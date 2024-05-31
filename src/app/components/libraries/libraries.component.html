@@ -1,24 +1,37 @@
 <app-navbar></app-navbar>
 
-
 <div class="library-container">
     <div class="header">
         <h1>Libraries</h1>
 
         <div class="actions">
-            <button class="export-button">Export Data</button>
+            <button class="export-button" (click)="showAddLibraryForm = !showAddLibraryForm">Add Library</button>
             <button class="new-library-button" (click)="logout()" title="Log out">LOG OUT</button>
         </div>
     </div>
     <h3>Showing <span style="color: #FFAF45;">All Libraries</span></h3>
     <p>Search via keyword</p>
     <div class="search-container">
-        <input type="text" placeholder="Search" class="search-input" />
-        <!-- <span class="search-icon">🔍</span> -->
-        <button class="reset-button">RESET</button>
+        <input type="text" placeholder="Search" class="search-input" [(ngModel)]="searchTerm"
+            (input)="searchLibraries()" />
+        <button class="reset-button" (click)="resetSearch()">RESET</button>
     </div>
 
-    <table class="library-table" *ngIf="libraries.length > 0; else noLibraries">
+    <!-- Add Library Form -->
+    <div *ngIf="showAddLibraryForm">
+        <h3>Add New Library</h3>
+        <form (ngSubmit)="addLibrary()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" [(ngModel)]="newLibrary.name" name="name" required />
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" [(ngModel)]="newLibrary.location" name="location" required />
+
+            <button type="submit">Add Library</button>
+        </form>
+    </div>
+
+    <table class="library-table" *ngIf="filteredLibraries.length > 0; else noLibraries">
         <thead>
             <tr>
                 <th>Library</th>
@@ -28,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let library of libraries">
+            <tr *ngFor="let library of filteredLibraries">
                 <td [title]="library.name + ' details'" (click)="routeToBook(library.id)" class="library-name"
                     style="color: #FFAF45;">
                     {{ library.name }}

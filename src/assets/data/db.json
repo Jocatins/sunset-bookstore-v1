@@ -40,45 +40,6 @@
       ]
     },
     {
-      "id": "2",
-      "name": "Westside Branch",
-      "location": "456 Elm St, Anytown",
-      "books": [
-        {
-          "id": 201,
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "description": "A great novel, and also lovely film",
-          "status": "IN",
-          "dueDate": null
-        },
-        {
-          "id": 202,
-          "title": "Brave New World",
-          "author": "Aldous Huxley",
-          "description": "A great novel, and also lovely film",
-          "status": "OUT",
-          "dueDate": "2024-06-15"
-        },
-        {
-          "id": 203,
-          "title": "Oliver Twist",
-          "author": "Charles Dickens",
-          "description": "Funny plot",
-          "status": "IN",
-          "dueDate": "2024-05-25"
-        },
-        {
-          "id": 204,
-          "title": "New Book",
-          "author": "James Brown",
-          "description": "Here we are",
-          "status": "IN",
-          "dueDate": "2024-05-04"
-        }
-      ]
-    },
-    {
       "id": "3",
       "name": "Eastside Branch",
       "location": "789 Oak St, Anytown",
@@ -104,6 +65,14 @@
           "description": "dddddddddddddddddd",
           "status": "IN",
           "dueDate": ""
+        },
+        {
+          "id": 1717141504878,
+          "title": "Titan and Gypsies 3",
+          "author": "Jocatins",
+          "description": "wsddssssssssssssssssssssssssssssssssssssssssssssssssss",
+          "status": "IN",
+          "dueDate": "2024-06-02"
         }
       ]
     },
@@ -127,8 +96,38 @@
           "description": "A great novel, and also lovely film",
           "status": "OUT",
           "dueDate": "2024-07-01"
+        },
+        {
+          "id": 1717144141436,
+          "title": "New book",
+          "author": "Jocatins",
+          "description": "efeddss",
+          "status": "IN",
+          "dueDate": "2024-05-30"
         }
       ]
+    },
+    {
+      "name": "Khamen Lib",
+      "location": "Remote",
+      "id": "m7qyrXz"
+    },
+    {
+      "name": "Agwah Library",
+      "location": "Sickerville",
+      "id": "xxe5hPO"
+    },
+    {
+      "id": "7Qehymk",
+      "name": "Nicholas",
+      "location": "Ikeja",
+      "books": []
+    },
+    {
+      "id": "92765",
+      "name": "Gypsy Planet",
+      "location": "Sickerville",
+      "books": []
     }
   ],
   "users": [
