@@ -1,3 +1,4 @@
+import { FooterComponent } from "./../footer/footer.component";
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
@@ -7,6 +8,7 @@ import { FormsModule } from "@angular/forms";
 
 import { Library } from "../../../assets/models/Library";
 import { NavbarComponent } from "../navbar/navbar.component";
+
 import { Auth1Service } from "../../../assets/services/auth1.service";
 
 function generateId(): string {
@@ -17,7 +19,13 @@ function generateId(): string {
 @Component({
 	selector: "app-libraries",
 	standalone: true,
-	imports: [CommonModule, RouterModule, NavbarComponent, FormsModule],
+	imports: [
+		CommonModule,
+		RouterModule,
+		NavbarComponent,
+		FormsModule,
+		FooterComponent,
+	],
 	templateUrl: "./libraries.component.html",
 	styleUrls: ["./libraries.component.css"],
 })
