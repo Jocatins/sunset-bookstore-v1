@@ -1,3 +1,4 @@
+import { BookDetailComponent } from "./components/book-detail/book-detail.component";
 import { EditComponent } from "./components/edit/edit.component";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
@@ -35,6 +36,7 @@ const routes: Routes = [
 		canActivate: [AuthGuard],
 	},
 	{ path: "edit-book/:bookId", component: EditComponent },
+	{ path: "book-detail", component: BookDetailComponent },
 	{ path: "", redirectTo: "/login", pathMatch: "full" },
 	{ path: "**", redirectTo: "/login" },
 ];

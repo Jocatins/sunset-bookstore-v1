@@ -52,6 +52,7 @@ export class LibraryDetailComponent implements OnInit {
 		this.router.navigate(["/libraries"]);
 	}
 	editBook(bookId: number) {
-		this.router.navigate(["/edit-book", bookId]);
+		console.log("book route");
+		this.router.navigate(["/book-detail", bookId]);
 	}
 }

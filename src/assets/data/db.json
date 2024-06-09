@@ -108,25 +108,71 @@
       ]
     },
     {
-      "name": "Khamen Lib",
-      "location": "Remote",
-      "id": "m7qyrXz"
-    },
-    {
-      "name": "Agwah Library",
+      "id": "92765",
+      "name": "Gypsy Planet",
       "location": "Sickerville",
-      "id": "xxe5hPO"
+      "books": [
+        {
+          "id": 1717159402900,
+          "title": "Titan and Gypsies",
+          "author": "Jocatins",
+          "description": "asassdv  fs",
+          "status": "IN",
+          "dueDate": "2024-06-01"
+        }
+      ]
     },
     {
-      "id": "7Qehymk",
-      "name": "Nicholas",
+      "id": "73561",
+      "name": "Khamen",
+      "location": "Remote",
+      "books": [
+        {
+          "id": 1717167319285,
+          "title": "oliver twist",
+          "author": "James brown",
+          "description": "ggddsaa",
+          "status": "IN",
+          "dueDate": "2024-05-10"
+        },
+        {
+          "id": 1717167362744,
+          "title": "Titan and Gypsies",
+          "author": "Jocatins",
+          "description": "gbgdf gtttg",
+          "status": "OUT",
+          "dueDate": "2024-06-14"
+        }
+      ]
+    },
+    {
+      "id": "23835",
+      "name": "Agwah",
       "location": "Ikeja",
       "books": []
     },
     {
-      "id": "92765",
-      "name": "Gypsy Planet",
+      "id": "kKjh1c0",
+      "name": "Nicholas",
+      "location": "New Jersey",
+      "books": []
+    },
+    {
+      "id": "87BBB3j",
+      "name": "Marine",
+      "location": "Oceanville",
+      "books": []
+    },
+    {
+      "id": "ZA0z9R3",
+      "name": "Khamen",
       "location": "Sickerville",
+      "books": []
+    },
+    {
+      "id": "hrOIOSE",
+      "name": "Khamen Library",
+      "location": "Oceanville",
       "books": []
     }
   ],
