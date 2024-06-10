@@ -185,6 +185,21 @@
       "id": "13317",
       "name": "Southeast Branch",
       "location": "South East",
+      "books": [
+        {
+          "id": 1718014748748,
+          "title": "Fairytale",
+          "author": "Jocatins",
+          "description": "A fairy tale ending",
+          "status": "OUT",
+          "dueDate": "2024-06-12"
+        }
+      ]
+    },
+    {
+      "id": "19274",
+      "name": "Agwah Library",
+      "location": "Sickerville",
       "books": []
     }
   ],
