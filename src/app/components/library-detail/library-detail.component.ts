@@ -4,7 +4,9 @@ import { CommonModule } from "@angular/common";
 
 import { LibraryService } from "../../../assets/services/library.service";
 import { Library } from "../../../assets/models/Library";
+
 import { NavbarComponent } from "../navbar/navbar.component";
+import { FooterComponent } from "./../footer/footer.component";
 
 import { catchError } from "rxjs/operators";
 import { of } from "rxjs";
@@ -12,7 +14,7 @@ import { of } from "rxjs";
 @Component({
 	selector: "app-library-detail",
 	standalone: true,
-	imports: [CommonModule, RouterModule, NavbarComponent],
+	imports: [CommonModule, RouterModule, NavbarComponent, FooterComponent],
 	templateUrl: "./library-detail.component.html",
 	styleUrl: "./library-detail.component.css",
 })

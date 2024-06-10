@@ -1,0 +1,38 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="form-container">
+            <h2>Add New Library</h2>
+            <form [formGroup]="addLibraryForm" (ngSubmit)="addLibrary()">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" formControlName="name" />
+                    <div
+                        *ngIf="addLibraryForm.get('name')?.invalid && (addLibraryForm.get('name')?.dirty || addLibraryForm.get('name')?.touched)">
+                        <small *ngIf="addLibraryForm.get('name')?.errors?.['required']">Name is required.</small>
+                        <small *ngIf="addLibraryForm.get('name')?.errors?.['minlength']" style="color: red;">Name must
+                            be at least 5
+                            characters long.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" formControlName="location" />
+                    <div
+                        *ngIf="addLibraryForm.get('location')?.invalid && (addLibraryForm.get('location')?.dirty || addLibraryForm.get('location')?.touched)">
+                        <small *ngIf="addLibraryForm.get('location')?.errors?.['required']">Location is
+                            required.</small>
+                        <small *ngIf="addLibraryForm.get('location')?.errors?.['minlength']"
+                            style="color: red;">Location must
+                            be at least 5
+                            characters long.</small>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" (click)="closeModal()">Cancel</button>
+                    <button type="submit" class="save-btn" [disabled]="addLibraryForm.invalid">Add Library</button>
+                </div>
+            </form>
+        </div>
+        <button class="close-button" (click)="closeModal()">×</button>
+    </div>
+</div>

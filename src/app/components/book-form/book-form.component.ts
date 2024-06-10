@@ -13,11 +13,17 @@ import { Book } from "../../../assets/models/Book";
 import { Router } from "@angular/router";
 
 import { NavbarComponent } from "../navbar/navbar.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
 	selector: "app-book-form",
 	standalone: true,
-	imports: [CommonModule, ReactiveFormsModule, NavbarComponent],
+	imports: [
+		CommonModule,
+		ReactiveFormsModule,
+		NavbarComponent,
+		FooterComponent,
+	],
 	templateUrl: "./book-form.component.html",
 	styleUrl: "./book-form.component.css",
 })
@@ -37,7 +43,7 @@ export class BookFormComponent implements OnInit {
 			author: ["", Validators.required],
 			description: ["", Validators.required],
 			status: ["IN", Validators.required],
-			dueDate: [""],
+			dueDate: ["", Validators.required],
 		});
 
 		this.loadLibraries();

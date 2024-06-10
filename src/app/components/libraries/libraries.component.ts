@@ -8,6 +8,7 @@ import { FormsModule } from "@angular/forms";
 
 import { Library } from "../../../assets/models/Library";
 import { NavbarComponent } from "../navbar/navbar.component";
+import { ModalComponent } from "../modal/modal.component";
 
 import { Auth1Service } from "../../../assets/services/auth1.service";
 
@@ -25,11 +26,13 @@ function generateId(): string {
 		NavbarComponent,
 		FormsModule,
 		FooterComponent,
+		ModalComponent,
 	],
 	templateUrl: "./libraries.component.html",
 	styleUrls: ["./libraries.component.css"],
 })
 export class LibrariesComponent implements OnInit {
+	isModalOpen = false;
 	libraries: Library[] = [];
 	filteredLibraries: Library[] = [];
 	errorMessage: string | null = null;
@@ -62,6 +65,14 @@ export class LibrariesComponent implements OnInit {
 		);
 	}
 
+	public openModal(): void {
+		this.isModalOpen = true;
+	}
+
+	public closeModal(): void {
+		this.isModalOpen = false;
+	}
+
 	public logout() {
 		this.auth1Service.logout();
 		this.router.navigate(["/login"]);
@@ -75,22 +86,7 @@ export class LibrariesComponent implements OnInit {
 		this.router.navigate(["/libraries", libraryId]);
 	}
 
-	addLibrary(): void {
-		this.libraryService.addLibrary(this.newLibrary).subscribe(
-			(response) => {
-				console.log("Library added successfully", response);
-				this.libraries.push(response);
-				this.searchLibraries(); // Update the filtered libraries
-				this.newLibrary = { id: "", name: "", location: "", books: [] }; // Reset the form
-				this.showAddLibraryForm = false; // Hide the form after adding
-			},
-			(error) => {
-				console.error("Error adding library", error);
-			}
-		);
-	}
-
-	deleteLibrary(id: number): void {
+	public deleteLibrary(id: number): void {
 		window.alert("Are you sure?");
 		this.libraryService.deleteLibrary(id).subscribe(
 			(response) => {
@@ -106,7 +102,7 @@ export class LibrariesComponent implements OnInit {
 		);
 	}
 
-	searchLibraries(): void {
+	public searchLibraries(): void {
 		if (!this.searchTerm) {
 			this.filteredLibraries = this.libraries;
 		} else {
@@ -118,7 +114,7 @@ export class LibrariesComponent implements OnInit {
 		}
 	}
 
-	resetSearch(): void {
+	public resetSearch(): void {
 		this.searchTerm = "";
 		this.searchLibraries();
 	}
